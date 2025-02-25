@@ -1,0 +1,28 @@
+{% extends "shome/basic.html" %}
+{% block title %}{{product.product_name}}- My tech Reviews{% endblock %}
+{% block body %}
+<h2 id="hedding">{{product.product_name}}</h2>
+<div id="imgframe">
+    <img src="/media/{{product.image}}" alt="">
+</div>
+<div id="contframe">
+    <p>{{product.desc}}</p>
+</div>
+<style>
+    #imgframe {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    #imgframe img {
+        width: 100%;
+    }
+    #hedding{
+        text-align: center;
+    }
+    #contframe {
+        width: 50%;
+        margin: 0 auto;
+    }
+</style>
+{% endblock  %}

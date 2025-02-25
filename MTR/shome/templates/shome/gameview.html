@@ -1,0 +1,29 @@
+{% extends "shome/basic.html" %}
+{% block title %}{{Gaming.game_name}}- My tech Reviews{% endblock %}
+{% block body %}
+<h2 id="hedding">{{Gaming.game_name}}</h2>
+<div id="imgframe">
+    <img src="/media/{{Gaming.image}}" alt="">
+</div>
+<div id="contframe">
+    <p>{{Gaming.desc}}</p>
+</div>
+<style>
+    #imgframe {
+        width: 50%;
+        margin: 0 auto;
+    }
+    #hedding{
+        text-align: center;
+    }
+
+    #imgframe img {
+        width: 100%;
+    }
+
+    #contframe {
+        width: 50%;
+        margin: 0 auto;
+    }
+</style>
+{% endblock  %}

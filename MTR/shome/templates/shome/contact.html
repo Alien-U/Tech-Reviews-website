@@ -1,0 +1,63 @@
+{% extends "shome/basic.html" %}
+{% block title %}Title of about{% endblock %}
+{% block body %}
+<h4>We'd love to hear from you! Please fill out the form below.</h4>
+
+<form action="/contact/" method="POST"> 
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject">
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Submit</button>
+    <br><br><br>
+</form>
+<style>
+    body {
+        font-family: sans-serif;
+        margin: 20px;
+    }
+    
+    h4{
+        text-align:center;
+        color:gray;
+    }
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock  %}
