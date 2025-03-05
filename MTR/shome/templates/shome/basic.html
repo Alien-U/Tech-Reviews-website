@@ -4,71 +4,427 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
     <header>
-        <h1>Tech Reviews</h1>
+        {% comment %} <h1>Tech Reviews</h1> {% endcomment %}
+        <p><i>Tech Reviews India</i></p>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/gadgets">Gadgets</a></li>
-                <li><a href="/software">Software</a></li>
-                <li><a href="/gaming">Gaming</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/"class="H">Home</a></li>
+                <li><a href="/gadgets"class="G">Gadgets</a></li>
+                <li><a href="/software"class="S">Software</a></li>
+                <li><a href="/gaming"class="g">Gaming</a></li>
+                <li><a href="/about"class="A">About</a></li>
+                <li><a href="/contact"class="C">Contact</a></li>
+                {% if user.is_authenticated %}
+                 <button id="btn"onclick="opendrop()">Hello {{request.user}}</button>
+                {% else %}
+                 <button id="btn"onclick="openLogin()">Login</button>
+                 <button id="btn2"onclick="opensignUp()">SignUP</button>
+                {% endif %}
             </ul>
         </nav>
     </header>
+    {% comment %} popup {% endcomment %}
+    <div class="SignUpContainer"id="SignUpContainer">
+      <div class="SignUp"id="SignUp">
+          <form action="/signup"method="post"id="form">
+            <img src="close.png" height="15px"width="15px"id="close"onclick="closesignUp()">
+            <br>
+            <h2><i>Sign Up</i></h2>
+            <i><p style="color:green;">Sign Up with :</p></i><br>
+            <img src="facebook.png" height="30px"width="30px"  alt="">
+            <img src="apple.png" height="30px"width="30px" alt="">
+            <img src="github.png"height="30px"width="30px" alt="">
+            <img src="search.png" height="30px"width="30px"alt="">
+            {% comment %} <br><br> {% endcomment %}
+            <i><h3 style="margin-left: 40%;color: rgb(113, 113, 113);">OR</h3></i>
+            <br>
+            <input type="text"placeholder="Username"id="username"name="username"><br>
+            <input type="text"placeholder="First name"id="Fname"name="Fname"><br>
+            <input type="text"placeholder="Last name"id="Lname"name="Lname"><br>
+            <input type="email"placeholder="Email"required id="Email"name="Email"><br>
+            <input type="password"placeholder="Password"required id="Password"name="Password"><br><br>
+            <input id="butn" type="submit"value="SignUp"name="SignUp">
+            {% csrf_token %}
+          </form>
+      </div>
+    </div>
+    {% comment %} ----------------------*loginPopup*--------------------------- {% endcomment %}
+    <div class="loginContainer"id="loginContainer">
+      <div class="login"id="login">
+          <form id="form"action="/login"method="post">
+            {% csrf_token %}
+            <img src="close.png" height="15px"width="15px"id="close"onclick="closeLogin()">
+            <br>
+            <h2><i>Login :</i></h2>
+            <i><p style="color:green;">Continue with :</p></i><br>
+            <img src="facebook.png" height="30px"width="30px"  alt="">
+            <img src="apple.png" height="30px"width="30px" alt="">
+            <img src="github.png"height="30px"width="30px" alt="">
+            <img src="search.png" height="30px"width="30px"alt=""><br><br>
+            <i><h3 style="margin-left: 40%;color: rgb(113, 113, 113);">OR</h3></i>
+            <br><input type="text"placeholder="Username"id="Loginusername"name="Loginusername"><br>
+            <input type="password"placeholder="Password"required id="LoginPass"name="LoginPass"><br>
+            {% comment %} <input type="text"placeholder="First name"><br> {% endcomment %}
+            {% comment %} <input type="text"placeholder="Last name"><br><br> {% endcomment %}
+            <br><br>
+            <input id="butn" type="submit"value="Login">
+          </form>
+      </div>
+    </div>
+    {% comment %} dropdowndiv {% endcomment %}
+    <div class="DropContainer"id="DropContainer">
+      <div class="Drop"id="Drop">
+        <img src="close.png" height="15px"width="15px"id="close"onclick="closedrop()">
+          <br><br><br>
+            <li class="list"><a href="/logout"class="link">Logout</a></li>
+      </div>
+    </div>
+    {% comment %} end {% endcomment %}
     {% load static %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                    {{ message }}
+                </li>
+                {% comment %} <li>Riya</li> {% endcomment %}
+            {% endfor %}
+        </ul>
+    {% endif %}
     {% block body %}{% endblock %}
     <footer>
         <p>&copy; 2023 Tech Reviews</p>
     </footer>
 
 </body>
+<script>
+  let signUp = document.getElementById("SignUpContainer");
+  function opensignUp()
+  {
+    signUp.classList.add("openSignUpContainer");
+  } 
+  function closesignUp()
+  {
+    signUp.classList.remove("openSignUpContainer");
+  }
+  {% comment %} -------------------*forlogin*------------------      {% endcomment %}
+  let Login = document.getElementById("loginContainer");
+  function openLogin()
+  {
+    Login.classList.add("openloginContainer");
+  } 
+  function closeLogin()
+  {
+    Login.classList.remove("openloginContainer");
+  }
+  {% comment %} ----------------*forDropdown*--------------- {% endcomment %}
+  let drop = document.getElementById("DropContainer");
+  function opendrop()
+  {
+    drop.classList.add("openDropContainer");
+  } 
+  function closedrop()
+  {
+    drop.classList.remove("openDropContainer");
+  }
+</script>
 <style>
-    /* General styles */
+  /* General styles */
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Header styles */
-header {
-  background-color:rgb(7, 118, 197);;
-  color: #fff;
-  padding: 1rem 0;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: flex-end;
-}
-
-nav li {
-  margin-left: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-}
-/* Footer styles */
-footer {
-  background-color:rgb(7, 118, 197);;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-}
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+    
+    /* Header styles */
+    header {
+    background-color:rgb(43, 43, 43);
+    {% comment %} background-color:rgba(43, 43, 43, 0); {% endcomment %}
+    color: #fff;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1;
+    /* {% comment %} padding: 1rem 0; {% endcomment %} */
+    }
+    
+    header p {
+    float:left;
+    margin: 0;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    color:rgb(228, 213, 0);
+    text-shadow: 2px 2px 1px rgb(132, 125, 0);
+    background-color:rgb(2, 217, 255);
+    border-radius: 10px;
+    }
+    
+    nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 1%;
+    display: flex;
+    justify-content: flex-start;
+    }
+    
+    nav li {
+    margin-left: 20px;
+    } 
+    
+    nav a {
+    /* {% comment %} color: #fff; {% endcomment %} */
+    color:rgb(237, 236, 236);
+    text-decoration: none;
+    }
+    #btn {
+    position: fixed;
+    right:3%;
+    top:4px;
+    border: 2px solid rgb(255, 255, 255); /* Correct border syntax */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 255, 0, 0);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    #btn:hover{
+    background-color: rgb(189, 189, 189);
+    }
+    #btn2{
+    position: fixed;
+    right:9%;
+    top:4px;
+    border: 2px solid rgb(255, 255, 255); /* Correct border syntax */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 255, 0, 0);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    #btn2:hover{
+    background-color: rgb(189, 189, 189);
+    }
+    /* Footer styles */
+    footer {
+    background-color:rgb(43, 43, 43);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    }
+    
+    /*---css for login and signup------*/
+    #close
+    {
+    margin-left: 100%;
+    background-color: #dfdfdf;
+    cursor: pointer;
+    }
+    .SignUpContainer
+    {
+    transform: translate(40%,-50%) scale(0.1);
+    visibility: hidden;
+    background-color: rgba(57, 57, 57, 0.13);
+    width: 100%;
+    height: 110%;
+    /* position: absolute;  */
+    position: fixed;
+    top:0;
+    transition: transform 0.3s,top 0.3s;
+    }
+    .SignUp
+    {
+    width: 32%;
+    height: 97%;
+    margin-left: 64%;
+    margin-top: 0%;
+    background: #ffffff;
+    border-radius: 6px;
+    top: 9%;
+    position: absolute;
+    padding: 0 30px 30px;
+    box-shadow: 2px 3px 10px rgb(62, 61, 61);
+    }
+    .openSignUpContainer
+    {
+    transform: translate(0%,-50%) scale(1);
+    visibility: visible;
+    top: 48.5%;
+    z-index: 100;
+    }
+    .SignUp>form>input
+    {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    }
+    .SignUp>form>img
+    {
+    margin: 5px;
+    cursor: pointer;
+    }
+    .SignUp>form>img:hover
+    {
+    background-color: rgba(11, 11, 11, 0.112);
+    }
+    .SignUp>form>#butn
+    {
+    cursor: pointer;
+    background-color:rgb(4, 160, 4);
+    width: 60%;color:white;
+    border-radius:3%;
+    margin-left:20%;
+    }
+    .SignUp>form>#butn:hover
+    {
+    background-color:rgb(4, 185, 4);
+    }
+    /* {% comment %} ---css for login ------ {% endcomment %} */
+    .loginContainer
+    {
+    transform: translate(40%,-50%) scale(0.1);
+    visibility: hidden;
+    background-color: rgba(57, 57, 57, 0.13);
+    width: 100%;
+    height: 110%;
+    /* {% comment %} position: absolute; {% endcomment %} */
+    position: fixed;
+    top:0;
+    transition: transform 0.3s,top 0.3s;
+    }
+    .login
+    {
+    width: 32%;
+    height: 97%;
+    margin-left: 64%;
+    margin-top: 0%;
+    background: #ffffff;
+    border-radius: 6px;
+    top: 9%;
+    position: absolute;
+    padding: 0 30px 30px;
+    box-shadow: 2px 3px 10px rgb(62, 61, 61);
+    }
+    .openloginContainer
+    {
+    transform: translate(0%,-50%) scale(1);
+    visibility: visible;
+    top: 48.5%;
+    z-index: 100;
+    }
+    .login>form>input
+    {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+    }
+    .login>form>img
+    {
+    margin: 5px;
+    cursor: pointer;
+    }
+    .login>form>img:hover
+    {
+    background-color: rgba(11, 11, 11, 0.112);
+    }
+    .login>form>#butn
+    {
+    cursor: pointer;
+    background-color:rgb(4, 160, 4);
+    width: 60%;color:white;
+    border-radius:3%;
+    margin-left:20%;
+    }
+    .login>form>#butn:hover
+    {
+    background-color:rgb(4, 185, 4);
+    }
+    {% comment %} css for drop down {% endcomment %}
+    .DropContainer
+    {
+    transform: translate(40%,-50%) scale(0.1);
+    visibility: hidden;
+    background-color: rgba(57, 57, 57, 0.13);
+    width: 100%;
+    height: 110%;
+    position: fixed;
+    top:0;
+    transition: transform 0.3s,top 0.3s;
+    }
+    .Drop
+    {
+    width: 32%;
+    height: 97%;
+    margin-left: 64%;
+    margin-top: 0%;
+    background: #ffffff;
+    border-radius: 6px;
+    top: 9%;
+    position: absolute;
+    padding: 0 30px 30px;
+    box-shadow: 2px 3px 10px rgb(62, 61, 61);
+    }
+    .openDropContainer
+    {
+    transform: translate(0%,-50%) scale(1);
+    visibility: visible;
+    top: 48.5%;
+    z-index: 100;
+    }
+    {% comment %} css for showing massages {% endcomment %}
+    .messages {
+      list-style-type: none;
+      padding: 0;
+      margin-top:3.5%;
+    }
+    
+    .messages li {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      color:rgb(47, 47, 47); /* Text color */
+      font-family: Arial, sans-serif; /* Font style */
+    }
+    
+    .messages li.success {
+      background-color:rgb(69, 255, 113); /* Green background for success messages */
+    } 
+    .messages li.error {
+      background-color: #dc3545; /* Red background for error messages */
+    }
+    
+    .messages li.warning {
+      background-color: #ffc107; /* Yellow background for warning messages */
+    }
+    
+    .messages li.info {
+      background-color: #17a2b8; /* Blue background for info messages */
+    }
+    {% comment %} -----------*style for dropdown list*--------------- {% endcomment %}
+    .list{
+      display: inline;
+      margin-right: 10px;
+    }
+    
+    .link{
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .link:hover {
+      background-color: #2980b9;
+    }
 </style>
 </html>

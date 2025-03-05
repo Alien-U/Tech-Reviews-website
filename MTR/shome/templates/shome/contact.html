@@ -1,7 +1,7 @@
 {% extends "shome/basic.html" %}
 {% block title %}Title of about{% endblock %}
 {% block body %}
-<h4>We'd love to hear from you! Please fill out the form below.</h4>
+    <h4>We'd love to hear from you! Please fill out the form below.</h4>
 
 <form action="/contact/" method="POST"> 
     {% csrf_token %}
@@ -21,6 +21,11 @@
     <br><br><br>
 </form>
 <style>
+    .C
+  {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
     body {
         font-family: sans-serif;
         margin: 20px;
@@ -29,6 +34,7 @@
     h4{
         text-align:center;
         color:gray;
+        margin-top:5%;
     }
     form {
         max-width: 600px;

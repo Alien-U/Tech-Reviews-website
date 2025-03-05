@@ -8,22 +8,44 @@
 <div id="contframe">
     <p>{{Gaming.desc}}</p>
 </div>
+<hr>
+<div class="container">
+    <h2>Comments</h2>
+    {% comment %} <form action="/postComment"method="post">
+        <input type="text"name="comment"placeholder="Enter your comment here">
+        <input type="hidden"name="id" value="{{ post.id }}">
+        {% csrf_token %}
+        <input type="submit"value="submit">
+    </form> {% endcomment %}
+    <div class="row">
+        <div class="col-md-2 bg-success">Image Here</div>
+        <div class="col-md-10 bg-primary">Comment Here</div>
+    </div>
+</div>
+<br><br><br><br><br>
 <style>
     #imgframe {
-        width: 50%;
-        margin: 0 auto;
+        width: 300px;
+        box-shadow: 2px 2px 5px rgb(160, 160, 160);
+        border-radius: 5px;
+       {% comment %} padding: 2rem;, {% endcomment %}
+       padding: 1% 1% 10% 1%;
+       text-align: center;
+       position: absolute;
     }
     #hedding{
         text-align: center;
     }
 
     #imgframe img {
-        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
     }
 
     #contframe {
         width: 50%;
-        margin: 0 auto;
+        margin-left: 36%;
     }
 </style>
 {% endblock  %}

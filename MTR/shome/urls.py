@@ -11,4 +11,9 @@ urlpatterns = [
     path('softwares/<int:myid>',views.softview,name="softview"),
     path('games/<int:myid>',views.gameview,name="gameview"),
     path('contact/', views.contact,name="contact"),
+    path('signup', views.handleSignup,name="handleSignup"),
+    path('login', views.handleLogin,name="handleLogin"),
+    path('logout', views.handleLogout,name="handleLogout"),
+    # APi to pose a comment
+    # path('postComment',views.postComment,name="postComment"),
 ]

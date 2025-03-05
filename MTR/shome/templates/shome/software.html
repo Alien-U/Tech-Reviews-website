@@ -27,7 +27,11 @@
     </div>
 </section>
 <style>
-
+  .S
+  {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
 
 /* Gadget categories styles */
 .gadget-categories {
@@ -62,12 +66,13 @@ padding: 2rem 0;
 .gadget-cards {
 display: flex;
 justify-content: space-between;
+margin-left:43px;
 }
 .card-flexbox {
 display: flex;
+justify-content: space-between;
 flex-wrap: wrap; /* Allow cards to wrap onto multiple lines */
 gap: 25px; /* Adjust spacing between cards */
-margin-left:46px;
 }
 .card {
 width: 300px;
@@ -75,7 +80,6 @@ border: 1px solid #ccc;
 border-radius: 5px;
 padding: 2rem;
 text-align: center;
-{% comment %} flex: 1 0 250px;  {% endcomment %}
 }
 
 

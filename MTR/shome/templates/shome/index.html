@@ -9,7 +9,6 @@
     </div>
 </section>
 {% comment %} video 42 creating product page {% endcomment %}
-
 <section class="featured-reviews">
     <h2>Featured Electronic Gadgets</h2>
     <div class="review-cards">
@@ -52,7 +51,7 @@
             <p>{{Softwarez.2.desc|slice:"0:103"}}...</p>
             <a href="/softwares/{{Softwarez.2.id}}">Read Full Review</a>
         </div>
-    </div>
+    </div> 
     <h2>Featured Gaming tools</h2>
     <div class="review-cards">
         <div class="card">
@@ -97,6 +96,11 @@
     </div>
 </section>
 <style>
+  .H
+  {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
 /* Hero section styles */
 .hero {
   background-color: #f0f0f0;
@@ -114,7 +118,7 @@
 }
 
 .hero button {
-  background-color: rgb(7, 118, 197);;
+  background-color: rgb(48, 48, 48);;
   color: #fff;
   padding: 1rem 2rem;
   border: none;
@@ -131,6 +135,8 @@
   margin-left:3%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Allow cards to wrap onto multiple lines */
+  gap: 25px; /* Adjust spacing between cards */
 }
 
 .card {
@@ -146,7 +152,6 @@
   height: auto;
   margin-bottom: 1rem;
 }
-
 /* Latest news styles */
 .latest-news {
   padding: 4rem 0;

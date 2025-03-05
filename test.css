@@ -1,0 +1,7 @@
+#imgframe {
+    width: 40%;
+    padding: 1% 1% 10% 0%;
+    border:solid, red;
+    position: absolute;
+    {% comment %} margin: 0 auto; {% endcomment %}
+}

@@ -6,23 +6,40 @@
     <img src="/media/{{product.image}}" alt="">
 </div>
 <div id="contframe">
-    <p>{{product.desc}}</p>
+    <p>{{product.desc|safe}}</p>
 </div>
 <style>
     #imgframe {
-        width: 50%;
-        margin: 0 auto;
+        {% comment %} width: 50%;
+        margin: 0 auto; {% endcomment %}
+        {% comment %} width: 40%;
+        padding: 1% 1% 10% 0%;
+        border-radius:3px;
+        box-shadow: 2px 2px 5px rgb(160, 160, 160);
+        background-color: rgb(241, 242, 242);
+        position: absolute; {% endcomment %}
+        width: 300px;
+        box-shadow: 2px 2px 5px rgb(160, 160, 160);
+        border-radius: 5px;
+       {% comment %} padding: 2rem;, {% endcomment %}
+       padding: 1% 1% 10% 1%;
+       text-align: center;
+       position: absolute;
     }
 
     #imgframe img {
-        width: 100%;
+        {% comment %} width: 100%; {% endcomment %}
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
     }
     #hedding{
         text-align: center;
     }
     #contframe {
         width: 50%;
-        margin: 0 auto;
+        {% comment %} margin: 0% auto; {% endcomment %}
+        margin-left: 36%;
     }
 </style>
 {% endblock  %}
