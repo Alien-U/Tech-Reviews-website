@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {% comment %} <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> {% endcomment %}
 </head>
 <body>
     <header>
-        {% comment %} <h1>Tech Reviews</h1> {% endcomment %}
         <p><i>Tech Reviews India</i></p>
         <nav>
             <ul>
@@ -27,7 +26,7 @@
             </ul>
         </nav>
     </header>
-    {% comment %} popup {% endcomment %}
+    {% comment %}--------------- popup--------------- {% endcomment %}
     <div class="SignUpContainer"id="SignUpContainer">
       <div class="SignUp"id="SignUp">
           <form action="/signup"method="post"id="form">
@@ -39,7 +38,6 @@
             <img src="apple.png" height="30px"width="30px" alt="">
             <img src="github.png"height="30px"width="30px" alt="">
             <img src="search.png" height="30px"width="30px"alt="">
-            {% comment %} <br><br> {% endcomment %}
             <i><h3 style="margin-left: 40%;color: rgb(113, 113, 113);">OR</h3></i>
             <br>
             <input type="text"placeholder="Username"id="username"name="username"><br>
@@ -68,14 +66,12 @@
             <i><h3 style="margin-left: 40%;color: rgb(113, 113, 113);">OR</h3></i>
             <br><input type="text"placeholder="Username"id="Loginusername"name="Loginusername"><br>
             <input type="password"placeholder="Password"required id="LoginPass"name="LoginPass"><br>
-            {% comment %} <input type="text"placeholder="First name"><br> {% endcomment %}
-            {% comment %} <input type="text"placeholder="Last name"><br><br> {% endcomment %}
             <br><br>
             <input id="butn" type="submit"value="Login">
           </form>
       </div>
     </div>
-    {% comment %} dropdowndiv {% endcomment %}
+    {% comment %} ------------dropdowndiv------------------- {% endcomment %}
     <div class="DropContainer"id="DropContainer">
       <div class="Drop"id="Drop">
         <img src="close.png" height="15px"width="15px"id="close"onclick="closedrop()">
@@ -83,7 +79,7 @@
             <li class="list"><a href="/logout"class="link">Logout</a></li>
       </div>
     </div>
-    {% comment %} end {% endcomment %}
+    {% comment %} --------------end-------------------- {% endcomment %}
     {% load static %}
     {% if messages %}
         <ul class="messages">
@@ -91,7 +87,6 @@
                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
                     {{ message }}
                 </li>
-                {% comment %} <li>Riya</li> {% endcomment %}
             {% endfor %}
         </ul>
     {% endif %}
@@ -143,13 +138,11 @@ body {
     /* Header styles */
     header {
     background-color:rgb(43, 43, 43);
-    {% comment %} background-color:rgba(43, 43, 43, 0); {% endcomment %}
     color: #fff;
     position:fixed;
     width:100%;
     top:0;
     z-index:1;
-    /* {% comment %} padding: 1rem 0; {% endcomment %} */
     }
     
     header p {
@@ -176,10 +169,10 @@ body {
     } 
     
     nav a {
-    /* {% comment %} color: #fff; {% endcomment %} */
     color:rgb(237, 236, 236);
     text-decoration: none;
     }
+
     #btn {
     position: fixed;
     right:3%;
@@ -191,9 +184,11 @@ body {
     border-radius: 5px;
     cursor: pointer;
     }
+
     #btn:hover{
     background-color: rgb(189, 189, 189);
     }
+
     #btn2{
     position: fixed;
     right:9%;
@@ -205,10 +200,13 @@ body {
     border-radius: 5px;
     cursor: pointer;
     }
+
     #btn2:hover{
     background-color: rgb(189, 189, 189);
     }
+
     /* Footer styles */
+    
     footer {
     background-color:rgb(43, 43, 43);
     color: #fff;

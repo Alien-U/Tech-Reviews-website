@@ -2,7 +2,6 @@ from django.db import models
 from tinymce.models import HTMLField
 from django.contrib.auth.models import User
 from django.utils.timezone import now
-# from .models import Post
 # Create your models here.
 class product(models.Model):
     product_id = models.AutoField
@@ -23,7 +22,8 @@ class Softwarez(models.Model):
     category=models.CharField(max_length=50,default="")
     subcategory=models.CharField(max_length=50,default="")
     price=models.IntegerField(default=0)
-    desc = models.CharField(max_length=3000)
+    # desc = models.CharField(max_length=3000)
+    desc=HTMLField()
     pub_date = models.DateField()
     image=models.ImageField(upload_to="shome/images",default="")
 
@@ -35,7 +35,8 @@ class Gaming(models.Model):
     category=models.CharField(max_length=50,default="")
     subcategory=models.CharField(max_length=50,default="")
     price=models.IntegerField(default=0)
-    desc = models.CharField(max_length=3000)
+    desc=HTMLField()
+    # desc = models.CharField(max_length=3000)
     pub_date = models.DateField()
     image=models.ImageField(upload_to="shome/images",default="")
 
@@ -50,10 +51,4 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
-# class BlogComment(models.Model):
-#     sno=models.AutoField(primary_key=True)
-#     comment=models.TextField()
-#     user=models.ForeignKey(User,on_delete=models.CASCADE)
-#     post=models.ForeignKey(Gaming,on_delete=models.CASCADE)
-#     parent=models.ForeignKey('self',on_delete=models.CASCADE,null=True)
-#     timestamp=models.DateTimeField(default=now)
+    #we have to add comment Section letter 

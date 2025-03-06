@@ -1,7 +1,8 @@
 {% extends "shome/basic.html" %}
 {% block title %}Title of about{% endblock %}
 {% block body %}
-    <h4>We'd love to hear from you! Please fill out the form below.</h4>
+{% if user.is_authenticated %}
+<h4>We'd love to hear from you! Please fill out the form below.</h4>
 
 <form action="/contact/" method="POST"> 
     {% csrf_token %}
@@ -19,7 +20,13 @@
 
     <button type="submit">Submit</button>
     <br><br><br>
-</form>
+</form> 
+{% else %}
+    <div class="container">
+        <div class="message">Please login or SignUp to Contact us</div>
+    </div>
+{% endif %}
+    
 <style>
     .C
   {
@@ -64,6 +71,19 @@
 
     button:hover {
         background-color: #0056b3;
+    }
+
+{% comment %} css if user is not logined {% endcomment %}
+    .container {
+        text-align: center;
+        background: #ffffff;
+        padding:19% 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 234, 255, 0.1);
+    }
+    .message {
+        font-size: 28px;
+        color: rgba(85, 85, 85, 0.6);
     }
 </style>
 {% endblock  %}

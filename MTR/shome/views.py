@@ -104,19 +104,4 @@ def handleLogout(request):
     return redirect('/')
     # return HttpResponse("handleLogout")
 
-# def postComment(request):
-#     if request.method == "POST":
-#         comment = request.POST.get('comment')
-#         user = request.user
-#         game_id = request.POST.get('id')
-#         print(f"Received comment: {comment}")  # Add this line for debugging
-#         print(f"Received game_id: {game_id}")  # Add this line for debugging
-#         try:
-#             post = Gaming.objects.get(id=game_id)
-#             comment = BlogComment(comment=comment, user=user, post=post)
-#             comment.save()
-#             messages.success(request, "Your comment has been posted successfully")
-#         except Gaming.DoesNotExist:
-#             print(f"Game with id {game_id} does not exist.")  # Add this line for debugging
-#             messages.error(request, "The specified game does not exist.")
-#     return redirect('/')
+#we will work on comments letter
