@@ -7,6 +7,15 @@
 {% block body %}
 {% comment %} sidebr code {% endcomment %}
 <div class="sidebar">
+    <p>Electronic Gadgets</p>
+    {% for i in Prodscroll %}
+        <a href="/products/{{i.id}}">{{i.product_name |slice:"0:23"}}</a>
+    {% endfor %}
+    <p>Softwares</p>
+    {% for i in Softscroll %}
+        <a href="/softwares/{{i.id}}">{{i.software_name |slice:"0:23"}}</a>
+    {% endfor %}
+    <p>Gaming</p>
     {% for i in Gamescroll %}
         <a href="/games/{{i.id}}">{{i.game_name |slice:"0:23"}}</a>
     {% endfor %}
@@ -20,9 +29,21 @@
     <p>{{Gaming.desc|safe}}</p>
 </div>
 <hr>
-<div class="container">
+<div class="Cmtcontainer">
     <h2>Comments......</h2><br>
     <p>We will work on comments Letter</p>
+</div>
+<br><br>
+<div class="Related_Cont">
+    <h2>Related Articles...</h2>
+    {% for i in Gamescroll %}
+            <div class="card"> 
+                <img src="/media/{{i.image}}" alt="Smartphone">
+                <h3>{{i.game_header |slice:"0:93"}}...</h3>
+                <a href="/products/{{i.id}}">Read Review</a>
+            </div>
+            <br><br>
+    {% endfor %}
 </div>
 <br><br><br><br><br>
 {% endblock  %}

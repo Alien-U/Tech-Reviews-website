@@ -35,24 +35,30 @@ def about(request):
     return render(request,'shome/about.html')
 
 def prodview(request,myid):
+    softscroll=Softwarez.objects.all()
     prodscroll=product.objects.all()
+    gamescroll=Gaming.objects.all()
     #fetch the product using id
     products=product.objects.filter(id=myid)
-    params={'product':products[0],'Prodscroll':prodscroll}
+    params={'product':products[0],'Softscroll':softscroll,'Prodscroll':prodscroll,'Gamescroll':gamescroll}
     return render(request,'shome/prodview.html',params)
 
 def softview(request,myid):
     softscroll=Softwarez.objects.all()
+    prodscroll=product.objects.all()
+    gamescroll=Gaming.objects.all()
     #fetch the product using id
     softwares=Softwarez.objects.filter(id=myid)
-    params={'Softwarez':softwares[0],'Softscroll':softscroll}
+    params={'Softwarez':softwares[0],'Softscroll':softscroll,'Prodscroll':prodscroll,'Gamescroll':gamescroll}
     return render(request,'shome/softwareview.html',params)
     
 def gameview(request,myid):
+    softscroll=Softwarez.objects.all()
+    prodscroll=product.objects.all()
     gamescroll=Gaming.objects.all()
     #fetch the product using id
     games=Gaming.objects.filter(id=myid)
-    params={'Gaming':games[0],'Gamescroll':gamescroll}
+    params={'Gaming':games[0],'Softscroll':softscroll,'Prodscroll':prodscroll,'Gamescroll':gamescroll}
     return render(request,'shome/gameview.html',params)
     
 def contact(request):
