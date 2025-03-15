@@ -1,5 +1,9 @@
 {% extends "shome/basic.html" %}
 {% block title %}My tech reviews{% endblock  %}
+{% block head_extra %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'shome/index.css' %}">
+{% endblock %}
 {% block body %}
 <section class="hero">
     <div class="hero-content">
@@ -14,20 +18,20 @@
     <div class="review-cards">
         <div class="card">
             <img src="/media/{{Product.0.image}}" alt="Gadget 1">
-            <h3>{{Product.0.product_name}}</h3>
-            <p>{{Product.0.desc|slice:"0:103"}}...</p>
+            <h3>{{Product.0.product_header|slice:"0:23"}}...</h3>
+            <p>{{Product.0.desc|slice:"0:103"|safe}}...</p>
             <a href="/products/{{Product.0.id}}">Read Full Review</a>
         </div>
         <div class="card">
             <img src="/media/{{Product.1.image}}" alt="Software 2">
-            <h3>{{Product.1.product_name}}</h3>
-            <p>{{Product.1.desc|slice:"0:103"}}...</p>
+            <h3>{{Product.1.product_header|slice:"0:23"}}...</h3>
+            <p>{{Product.1.desc|slice:"0:103"|safe}}...</p>
             <a href="/products/{{Product.1.id}}">Read Full Review</a>
         </div>
         <div class="card">
             <img src="/media/{{Product.2.image}}" alt="Game 3">
-            <h3>{{Product.2.product_name}}</h3>
-            <p>{{Product.2.desc|slice:"0:103"}}...</p>
+            <h3>{{Product.2.product_header|slice:"0:23"}}...</h3>
+            <p>{{Product.2.desc|slice:"0:103"|safe}}...</p>
             <a href="/products/{{Product.2.id}}">Read Full Review</a>
         </div>
     </div>
@@ -35,20 +39,20 @@
     <div class="review-cards">
         <div class="card">
             <img src="/media/{{Softwarez.0.image}}" alt="Gadget 1">
-            <h3>{{Softwarez.0.software_name}}</h3>
-            <p>{{Softwarez.0.desc|slice:"0:103"}}...</p>
+            <h3>{{Softwarez.0.software_header}}</h3>
+            <p>{{Softwarez.0.desc|slice:"0:103"|safe}}...</p>
             <a href="/softwares/{{Softwarez.0.id}}">Read Full Review</a>
         </div>
         <div class="card">
             <img src="/media/{{Softwarez.1.image}}" alt="Software 2">
-            <h3>{{Softwarez.1.software_name}}</h3>
-            <p>{{Softwarez.1.desc|slice:"0:103"}}...</p>
+            <h3>{{Softwarez.1.software_header}}</h3>
+            <p>{{Softwarez.1.desc|slice:"0:103"|safe}}...</p>
             <a href="/softwares/{{Softwarez.1.id}}">Read Full Review</a>
         </div>
         <div class="card">
             <img src="/media/{{Softwarez.2.image}}" alt="Game 3">
-            <h3>{{Softwarez.2.software_name}}</h3>
-            <p>{{Softwarez.2.desc|slice:"0:103"}}...</p>
+            <h3>{{Softwarez.2.software_header}}</h3>
+            <p>{{Softwarez.2.desc|slice:"0:103"|safe}}...</p>
             <a href="/softwares/{{Softwarez.2.id}}">Read Full Review</a>
         </div>
     </div> 
@@ -56,20 +60,20 @@
     <div class="review-cards">
         <div class="card">
             <img src="/media/{{Gaming.0.image}}" alt="Gadget 1">
-            <h3>{{Gaming.0.game_name}}</h3>
-            <p>{{Gaming.0.desc|slice:"0:103"}}...</p>
+            <h3>{{Gaming.0.game_header}}</h3>
+            <p>{{Gaming.0.desc|slice:"0:103"|safe}}...</p>
             <a href="/games/{{Gaming.0.id}}">Read Full Review</a>
         </div>
         <div class="card">
             <img src="/media/{{Gaming.1.image}}" alt="Software 2">
-            <h3>{{Gaming.1.game_name}}</h3>
-            <p>{{Gaming.1.desc|slice:"0:103"}}...</p>
+            <h3>{{Gaming.1.game_header}}</h3>
+            <p>{{Gaming.1.desc|slice:"0:103"|safe}}...</p>
             <a href="/games/{{Gaming.1.id}}">Read Full Review</a>
         </div>
         <div class="card">
             <img src="/media/{{Gaming.2.image}}" alt="Game 3">
-            <h3>{{Gaming.2.game_name}}</h3>
-            <p>{{Gaming.2.desc|slice:"0:103"}}...</p>
+            <h3>{{Gaming.2.game_header}}</h3>
+            <p>{{Gaming.2.desc|slice:"0:103"|safe}}...</p>
             <a href="/games/{{Gaming.2.id}}">Read Full Review</a>
         </div>
     </div>
@@ -95,77 +99,4 @@
         </article>
     </div>
 </section>
-<style>
-  .H
-  {
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-  }
-/* Hero section styles */
-.hero {
-  background-color: #f0f0f0;
-  text-align: center;
-  padding: 5rem 0;
-}
-
-.hero-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.hero h2 {
-  margin-bottom: 1rem;
-}
-
-.hero button {
-  background-color: rgb(48, 48, 48);;
-  color: #fff;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Featured reviews styles */
-.featured-reviews {
-  padding: 4rem 0;
-}
-
-.review-cards {
-  margin-left:3%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Allow cards to wrap onto multiple lines */
-  gap: 25px; /* Adjust spacing between cards */
-}
-
-.card {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 2rem;
-  text-align: center;
-}
-
-.card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-/* Latest news styles */
-.latest-news {
-  padding: 4rem 0;
-}
-
-.news-feed {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-article {
-  width: 300px;
-  margin-bottom: 2rem;
-}
-</style>
 {% endblock %}

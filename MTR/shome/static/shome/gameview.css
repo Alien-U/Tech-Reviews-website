@@ -1,0 +1,51 @@
+    #imgframe {
+        width: 57%;
+        margin: 0 auto; /* Centers the element horizontally */
+        border:solid rgb(87, 0, 99);
+        padding: 1% 1% 1% 1%;
+        text-align: center; 
+    }
+
+    #imgframe img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    #hedding{
+        margin-top: 10%;
+        margin-left: 21%;
+        width: 57%;
+    }
+    #contframe {
+        text-align: center;
+        width: 57%;
+        margin-left: 25%;
+    }
+    .Cmtcontainer{
+        width: 57%;
+        margin-left: 21%;
+    }
+    /* for sidebar */
+    .sidebar {
+        height: 100vh;
+        width: 250px;
+        background-color: #e5cfe5;
+        color: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        top: 4%;
+        position:fixed ;
+    }
+    
+    .sidebar a {
+        text-decoration: none;
+        color: rgb(24, 24, 24);
+        padding: 10px 15px;
+        display: block;
+    }
+    
+    .sidebar a:hover {
+        background-color: #f1aaef;
+    }
+    /* sidebar ended */

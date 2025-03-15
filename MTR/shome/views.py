@@ -17,12 +17,8 @@ def index(request):
 
 def gadgets(request):
     products=product.objects.all()
-    # n=len(products)
-    # after added
-    # nSlides=n//4 + ceil((n/4)-(n//4))
     # ----------*--------------
     params={'Product':products}
-    # print(products)
     return render(request,'shome/gadgets.html',params)
 
 def software(request):
@@ -39,21 +35,25 @@ def about(request):
     return render(request,'shome/about.html')
 
 def prodview(request,myid):
+    prodscroll=product.objects.all()
     #fetch the product using id
     products=product.objects.filter(id=myid)
-    # print(products)
-    return render(request,'shome/prodview.html',{'product':products[0]})
+    params={'product':products[0],'Prodscroll':prodscroll}
+    return render(request,'shome/prodview.html',params)
 
 def softview(request,myid):
+    softscroll=Softwarez.objects.all()
     #fetch the product using id
     softwares=Softwarez.objects.filter(id=myid)
-    return render(request,'shome/softwareview.html',{'Softwarez':softwares[0]})
+    params={'Softwarez':softwares[0],'Softscroll':softscroll}
+    return render(request,'shome/softwareview.html',params)
     
 def gameview(request,myid):
+    gamescroll=Gaming.objects.all()
     #fetch the product using id
     games=Gaming.objects.filter(id=myid)
-    # comment=BlogComment.objects.filter(post=games[0],parent=None)
-    return render(request,'shome/gameview.html',{'Gaming':games[0]})
+    params={'Gaming':games[0],'Gamescroll':gamescroll}
+    return render(request,'shome/gameview.html',params)
     
 def contact(request):
     if request.method=="POST":

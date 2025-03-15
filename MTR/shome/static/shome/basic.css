@@ -1,0 +1,292 @@
+/* General styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+    
+    /* Header styles */
+    header {
+    background-color:rgb(151, 0, 193);
+    color: rgb(255, 255, 255);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1;
+    }
+    
+    #brandLogo
+    {
+      float:left;
+    margin: 0;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    }
+    nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 1%;
+    display: flex;
+    justify-content: flex-start;
+    }
+    
+    nav li {
+    margin-left: 20px;
+    } 
+    
+    nav a {
+    color:rgb(227, 227, 227);
+    text-decoration: none;
+    }
+
+    #btn {
+    position: fixed;
+    right:3%;
+    top:4px;
+    border: 2px solid rgb(255, 187, 0); /* Correct border syntax */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 255, 0, 0);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    #btn:hover{
+    background-color: rgba(195, 0, 255, 0.767);
+    }
+
+    #btn2{
+    position: fixed;
+    right:9%;
+    top:4px;
+    border: 2px solid rgb(255, 255, 255); /* Correct border syntax */
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 255, 0, 0);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    #btn2:hover{
+    background-color: rgb(189, 189, 189);
+    }
+
+    /* Footer styles */
+    
+    footer {
+      background-color:rgb(151, 0, 193);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    }
+    
+    /*---css for login and signup------*/
+    #close
+    {
+    margin-left: 100%;
+    background-color: #dfdfdf;
+    cursor: pointer;
+    }
+    .SignUpContainer
+    {
+    transform: translate(40%,-50%) scale(0.1);
+    visibility: hidden;
+    background-color: rgba(57, 57, 57, 0.13);
+    width: 100%;
+    height: 110%;
+    /* position: absolute;  */
+    position: fixed;
+    top:0;
+    transition: transform 0.3s,top 0.3s;
+    }
+    .SignUp
+    {
+    width: 32%;
+    height: 97%;
+    margin-left: 64%;
+    margin-top: 0%;
+    background: #ffffff;
+    border-radius: 6px;
+    top: 9%;
+    position: absolute;
+    padding: 0 30px 30px;
+    box-shadow: 2px 3px 10px rgb(62, 61, 61);
+    }
+    .openSignUpContainer
+    {
+    transform: translate(0%,-50%) scale(1);
+    visibility: visible;
+    top: 48.5%;
+    z-index: 100;
+    }
+    .SignUp>form>input
+    {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    }
+    .SignUp>form>img
+    {
+    margin: 5px;
+    cursor: pointer;
+    }
+    .SignUp>form>img:hover
+    {
+    background-color: rgba(11, 11, 11, 0.112);
+    }
+    .SignUp>form>#butn
+    {
+    cursor: pointer;
+    background-color:rgb(4, 160, 4);
+    width: 60%;color:white;
+    border-radius:3%;
+    margin-left:20%;
+    }
+    .SignUp>form>#butn:hover
+    {
+    background-color:rgb(4, 185, 4);
+    }
+    /* {% comment %} ---css for login ------ {% endcomment %} */
+    .loginContainer
+    {
+    transform: translate(40%,-50%) scale(0.1);
+    visibility: hidden;
+    background-color: rgba(57, 57, 57, 0.13);
+    width: 100%;
+    height: 110%;
+    /* {% comment %} position: absolute; {% endcomment %} */
+    position: fixed;
+    top:0;
+    transition: transform 0.3s,top 0.3s;
+    }
+    .login
+    {
+    width: 32%;
+    height: 97%;
+    margin-left: 64%;
+    margin-top: 0%;
+    background: #ffffff;
+    border-radius: 6px;
+    top: 9%;
+    position: absolute;
+    padding: 0 30px 30px;
+    box-shadow: 2px 3px 10px rgb(62, 61, 61);
+    }
+    .openloginContainer
+    {
+    transform: translate(0%,-50%) scale(1);
+    visibility: visible;
+    top: 48.5%;
+    z-index: 100;
+    }
+    .login>form>input
+    {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+    }
+    .login>form>img
+    {
+    margin: 5px;
+    cursor: pointer;
+    }
+    .login>form>img:hover
+    {
+    background-color: rgba(11, 11, 11, 0.112);
+    }
+    .login>form>#butn
+    {
+    cursor: pointer;
+    background-color:rgb(4, 160, 4);
+    width: 60%;color:white;
+    border-radius:3%;
+    margin-left:20%;
+    }
+    .login>form>#butn:hover
+    {
+    background-color:rgb(4, 185, 4);
+    }
+     /* css for drop down  */
+    .DropContainer
+    {
+    transform: translate(40%,-50%) scale(0.1);
+    visibility: hidden;
+    background-color: rgba(57, 57, 57, 0.13);
+    width: 100%;
+    height: 110%;
+    position: fixed;
+    top:0;
+    transition: transform 0.3s,top 0.3s;
+    }
+    .Drop
+    {
+    width: 32%;
+    height: 97%;
+    margin-left: 64%;
+    margin-top: 0%;
+    background: #ffffff;
+    border-radius: 6px;
+    top: 9%;
+    position: absolute;
+    padding: 0 30px 30px;
+    box-shadow: 2px 3px 10px rgb(62, 61, 61);
+    }
+    .openDropContainer
+    {
+    transform: translate(0%,-50%) scale(1);
+    visibility: visible;
+    top: 48.5%;
+    z-index: 100;
+    }
+    /* css for showing massages  */
+    .messages {
+      list-style-type: none;
+      padding: 0;
+      margin-top:3.5%;
+    }
+    
+    .messages li {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      color:rgb(47, 47, 47); /* Text color */
+      font-family: Arial, sans-serif; /* Font style */
+    }
+    
+    .messages li.success {
+      background-color:rgb(69, 255, 113); /* Green background for success messages */
+    } 
+    .messages li.error {
+      background-color: #dc3545; /* Red background for error messages */
+    }
+    
+    .messages li.warning {
+      background-color: #ffc107; /* Yellow background for warning messages */
+    }
+    
+    .messages li.info {
+      background-color: #17a2b8; /* Blue background for info messages */
+    }
+     /* -----------*style for dropdown list*---------------  */
+    .list{
+      display: inline;
+      margin-right: 10px;
+    }
+    
+    .link{
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .link:hover {
+      background-color: #2980b9;
+    }

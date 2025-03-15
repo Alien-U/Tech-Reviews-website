@@ -1,5 +1,9 @@
 {% extends "shome/basic.html" %}
 {% block title %}Title of Gadgets{% endblock %}
+{% block head_extra %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'shome/gadgets.css' %}">
+{% endblock %}
 {% block body %}
     <section class="gadget-categories">
         <h2>Browse by Category</h2>
@@ -20,74 +24,12 @@
           {% for i in Product %}
             <div class="card"> 
                 <img src="/media/{{i.image}}" alt="Smartphone">
-                <h3>{{i}}</h3>
-                <p>{{i.desc|slice:"0:103"}}...</p>
+                <h3>{{i.product_header |slice:"0:23"}}...</h3>
+                <p>{{i.desc|slice:"0:103"|safe}}...</p>
                 <a href="/products/{{i.id}}">Read Review</a>
             </div>
             {% endfor %}
           </div>
         </div>
     </section>
-<style>
-  .G
-  {
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-  }
-/* Gadget categories styles */
-.gadget-categories {
-  padding: 2rem 0;
-}
-
-.gadget-categories ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.gadget-categories li {
-  margin: 10px;
-}
-
-.gadget-categories a {
-  text-decoration: none;
-  color: #333;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-/* Featured gadgets styles */
-.featured-gadgets {
-  padding: 2rem 0;
-}
-
-.gadget-cards {
-  display: flex;
-  justify-content: space-between;
-}
-.card-flexbox {
-  display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap onto multiple lines */
-  gap: 25px; /* Adjust spacing between cards */
-  margin-left:46px;
-}
-.card {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 2rem;
-  text-align: center;
-  {% comment %} flex: 1 0 250px;  {% endcomment %}
-}
-
-
-.card img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-</style>
 {% endblock body %}

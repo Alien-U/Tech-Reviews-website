@@ -1,6 +1,17 @@
 {% extends "shome/basic.html" %}
 {% block title %}{{Softwarez.software_name}}- My tech Reviews{% endblock %}
+{% block head_extra %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'shome/softview.css' %}">
+{% endblock %}
 {% block body %}
+{% comment %} sidebr code {% endcomment %}
+<div class="sidebar">
+    {% for i in Softscroll %}
+        <a href="/softwares/{{i.id}}">{{i.software_name |slice:"0:23"}}</a>
+    {% endfor %}
+</div>
+{% comment %} sidebar ended {% endcomment %}
 <h2 id="hedding">{{Softwarez.software_name}}</h2>
 <div id="imgframe">
     <img src="/media/{{Softwarez.image}}" alt="">
@@ -14,26 +25,4 @@
     <p>We will work on comments Letter</p>
 </div>
 <br><br><br><br><br>
-<style>
-    #imgframe {
-        width: 300px;
-        box-shadow: 2px 2px 5px rgb(160, 160, 160);
-        border-radius: 5px;
-        padding: 1% 1% 10% 1%;
-        text-align: center;
-        position: absolute;
-    }
-
-    #imgframe img {
-        width: 100%;
-    }
-    #hedding{
-        text-align: center;
-    }
-
-    #contframe {
-        width: 50%;
-        margin-left: 36%;
-    }
-</style>
 {% endblock  %}

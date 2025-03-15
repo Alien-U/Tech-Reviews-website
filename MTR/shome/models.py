@@ -5,7 +5,8 @@ from django.utils.timezone import now
 # Create your models here.
 class product(models.Model):
     product_id = models.AutoField
-    product_name = models.CharField(max_length=50)
+    product_header = models.CharField(max_length=100,default="")
+    product_name = models.CharField(max_length=30,default="")
     category=models.CharField(max_length=50,default="")
     subcategory=models.CharField(max_length=50,default="")
     price=models.IntegerField(default=0)
@@ -18,7 +19,8 @@ class product(models.Model):
         return self.product_name
 class Softwarez(models.Model):
     software_id = models.AutoField
-    software_name = models.CharField(max_length=50)
+    software_header = models.CharField(max_length=100,default="")
+    software_name = models.CharField(max_length=30,default="")
     category=models.CharField(max_length=50,default="")
     subcategory=models.CharField(max_length=50,default="")
     price=models.IntegerField(default=0)
@@ -31,7 +33,8 @@ class Softwarez(models.Model):
         return self.software_name
 class Gaming(models.Model):
     game_id = models.AutoField
-    game_name = models.CharField(max_length=50)
+    game_header = models.CharField(max_length=100,default="")
+    game_name = models.CharField(max_length=30,default="")
     category=models.CharField(max_length=50,default="")
     subcategory=models.CharField(max_length=50,default="")
     price=models.IntegerField(default=0)
