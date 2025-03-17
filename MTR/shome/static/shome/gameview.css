@@ -47,7 +47,7 @@
     .sidebar {
         height: 90vh;
         width: 250px;
-        background-color: #f2f2f2;
+        background-color: #f5fcff;
         color: rgb(0, 0, 0);
         display: flex;
         flex-direction: column;
@@ -66,10 +66,10 @@
     }
     
     .sidebar a:hover {
-        background-color: #f1aaef;
+        background-color: #aadaf1e1;
     }
     .sidebar p{
-        background-color: #7b008e;
+        background-color: #003e8e;
         color: rgb(255, 255, 255);
         font-weight: bold;
     }

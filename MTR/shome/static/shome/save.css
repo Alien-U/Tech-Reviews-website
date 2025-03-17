@@ -1,0 +1,71 @@
+
+/* mediaquery */
+@media screen and (max-width: 768px) {
+  nav ul {
+      display: none; /* Hide the full menu on smaller screens */
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjust as needed */
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      text-align: center;
+  }
+
+  nav ul.active {
+      display: flex; /* Show the menu when active class is added */
+  }
+
+  nav ul li {
+      margin: 0;
+      padding: 15px 0;
+      width: 100%;
+  }
+
+  /* .hamburger {
+      display: flex; 
+      align-items: flex-start; 
+      width: 5%;
+  }
+  #brandLogo {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+} */
+header { /* Assuming you have a container for these elements */
+  display: flex;
+  align-items: center; /*Vertically center items in the row*/
+  justify-content: space-between; /* Distribute space between items (optional) */
+}
+
+.hamburger {
+  display: flex;
+  align-items: flex-start;
+  width: 5%;
+  margin-left: 10px;
+}
+
+#brandLogo {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+#LogSignBtn{
+  display: flex;
+  align-items: center; /*Vertically center items in the row*/
+  justify-content: space-between;
+}
+#btn {
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  width: 5%;
+  margin-left: 10px;
+  }
+
+  #btn2{
+    margin: 0;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  } 
+}

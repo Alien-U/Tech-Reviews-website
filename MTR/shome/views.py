@@ -71,6 +71,8 @@ def contact(request):
         contact.save()
     return render(request,'shome/contact.html')
 
+def AccountPage(request):
+    return render(request,'shome/LoginSignup.html')
 def handleSignup(request):
     if request.method=='POST':
         username=request.POST['username']

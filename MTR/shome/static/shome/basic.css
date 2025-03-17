@@ -5,72 +5,147 @@ body {
     padding: 0;
     }
     
-    /* Header styles */
-    header {
-    background-color: rgb(4, 149, 222);
+header {
+  background-color: rgb(4, 149, 222);
     color: rgb(255, 255, 255);
     position:fixed;
     width:100%;
     top:0;
     z-index:1;
-    }
-    
-    #brandLogo
-    {
-      float:left;
+}
+
+#brandLogo {
+    float:left;
     margin: 0;
     font-size: 1.5rem;
     margin-top: 0.5rem;
-    }
-    nav ul {
-    list-style: none;
+}
+
+
+nav ul {
+  list-style: none;
     margin: 0;
     padding: 1%;
     display: flex;
     justify-content: flex-start;
-    }
-    
-    nav li {
-    margin-left: 20px;
-    } 
-    
-    nav a {
-    color:rgb(255, 255, 255);
+    background-color: #00243e;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color:rgb(255, 255, 255);
     text-decoration: none;
-    }
+}
 
-    #btn {
-    position: fixed;
-    right:3%;
-    top:4px;
-    border: 2px solid rgb(255, 255, 255); /*Correct border syntax*/
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 170, 255);
-    padding: 0.5rem 1rem;
-    border-radius: 2px;
-    cursor: pointer;
-    }
+nav ul li a:hover {
+  text-decoration: underline;
+}
 
-    #btn:hover{
-    background-color: rgba(0, 247, 255, 0.767);
-    }
+#Usericon
+{ 
+  margin-left: auto; /* Push the element to the right */
+  margin-right:2vw;
+  margin-top: 0; /* Align to the top */
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block; 
+} 
+ #btn {
+  position: fixed;
+  right:3%;
+  top:4px;
+  border: 2px solid rgb(255, 255, 255); /*Correct border syntax*/
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 170, 255);
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  } 
 
-    #btn2{
-    position: fixed;
-    right:9%;
-    top:4px;
-    border: 2px solid rgb(255, 255, 255);/* Correct border syntax */
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 170, 255);
-    padding: 0.5rem 1rem;
-    border-radius: 3px;
-    cursor: pointer;
-    }
+  #btn:hover{
+  background-color: rgba(0, 247, 255, 0.767);
+  }
 
-    #btn2:hover{
-    background-color: rgba(0, 247, 255, 0.767);
-    }
+ #btn2{
+  position: fixed;
+  right:9%;
+  top:4px;
+  border: 2px solid rgb(255, 255, 255);/* Correct border syntax */
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 170, 255);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  } 
 
+
+  #btn2:hover{
+  background-color: rgba(0, 247, 255, 0.767);
+  }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default on larger screens */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+/* Responsive Design */
+/* mediaquery */
+@media screen and (max-width: 768px) {
+  nav ul {
+      display: none; /* Hide the full menu on smaller screens */
+      flex-direction: column;
+      position: absolute;
+      top: 43px; /* Adjust as needed */
+      left: 0;
+      width: 100%;
+      background-color: #00243e;
+      text-align: center;
+  }
+
+  nav ul.active {
+      display: flex; /* Show the menu when active class is added */
+  }
+
+  nav ul li {
+      margin: 0;
+      padding: 15px 0;
+      width: 100%;
+  }
+
+header { /* Assuming you have a container for these elements */
+  display: flex;
+  align-items: center; /*Vertically center items in the row*/
+  justify-content: space-between; /* Distribute space between items (optional) */
+}
+
+.hamburger {
+  display: flex;
+  align-items: flex-start;
+  width: 10vw;
+  margin-left: 10px;
+}
+
+#brandLogo {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+}
     /* Footer styles */
     
     footer {
@@ -301,12 +376,13 @@ body {
     }
     /* Thumb of the scrollbar (draggable part) */
 ::-webkit-scrollbar-thumb {
-  background: #888888; /* Darker gray for thumb */
+  background: #79c5c7; /* Darker gray for thumb */
   border-radius: 10px; /* Rounded corners for thumb */
 }
 
 /* Hover effect for the thumb */
 ::-webkit-scrollbar-thumb:hover {
-  background: #fb00ff; /* Even darker gray when hovering */
+  background: #67e4e8; /* Even darker gray when hovering */
 }
 /* ended */
+/* media quereis */

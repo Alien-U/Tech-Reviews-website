@@ -9,7 +9,7 @@
     {% block head_extra %}{% endblock %}
 </head>
 <body>
-    <header>
+   <!--- <header>
         <p id="brandLogo"><i>Tech Reviews India</i></p>
         <nav>
             <ul>
@@ -20,14 +20,39 @@
                 <li><a href="/about"class="A">About</a></li>
                 <li><a href="/contact"class="C">Contact</a></li>
                 {% if user.is_authenticated %}
-                 <button id="btn"onclick="opendrop()">Hello {{request.user}}</button>
+                 {% comment %} <button id="btn"onclick="opendrop()">Hello {{request.user}}<img src="static/shome/user.png" alt=""></button> {% endcomment %}
+                 <img src="{% static 'shome/user.png' %}" alt="" id="Usericon"onclick="opendrop()" height="39px" width="39px">
                 {% else %}
                  <button id="btn"onclick="openLogin()">Login</button>
                  <button id="btn2"onclick="opensignUp()">SignUP</button>
                 {% endif %}
             </ul>
         </nav>
-    </header>
+    </header>-->
+    <header>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+      <p id="brandLogo"><i>Tech Reviews India</i></p>
+  {% if user.is_authenticated %}
+      <img src="{% static 'shome/user.png' %}" alt="" id="Usericon" onclick="opendrop()" height="39px" width="39px">
+  {% else %}
+      <a href="/loginSignup"><img src="{% static 'shome/user-account.png' %}" alt="" id="Usericon" height="39px" width="39px"></a>
+  {% endif %}
+      <nav>
+          <ul id="navbar-ul">
+              <li><a href="/" class="H">Home</a></li>
+              <li><a href="/gadgets" class="G">Gadgets</a></li>
+              <li><a href="/software" class="S">Software</a></li>
+              <li><a href="/gaming" class="g">Gaming</a></li>
+              <li><a href="/about" class="A">About</a></li>
+              <li><a href="/contact" class="C">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+
     {% comment %}--------------- popup--------------- {% endcomment %}
     <div class="SignUpContainer"id="SignUpContainer">
       <div class="SignUp"id="SignUp">
@@ -99,25 +124,26 @@
 
 </body>
 <script>
-  let signUp = document.getElementById("SignUpContainer");
-  function opensignUp()
-  {
-    signUp.classList.add("openSignUpContainer");
-  } 
-  function closesignUp()
-  {
-    signUp.classList.remove("openSignUpContainer");
-  }
-  {% comment %} -------------------*forlogin*------------------      {% endcomment %}
-  let Login = document.getElementById("loginContainer");
-  function openLogin()
-  {
-    Login.classList.add("openloginContainer");
-  } 
-  function closeLogin()
-  {
-    Login.classList.remove("openloginContainer");
-  }
+  {% comment %} responsive header {% endcomment %}
+  // script.js
+function toggleMenu() {
+  const navbarUl = document.getElementById('navbar-ul');
+  navbarUl.classList.toggle('active');
+}
+
+// Example functions for buttons (replace with your actual logic)
+function openLogin() {
+  alert('Login clicked');
+}
+
+function opensignUp() {
+  alert('Sign Up clicked');
+}
+
+function opendrop() {
+  alert('User icon clicked');
+}
+  {% comment %} responsive header ended {% endcomment %}
   {% comment %} ----------------*forDropdown*--------------- {% endcomment %}
   let drop = document.getElementById("DropContainer");
   function opendrop()
