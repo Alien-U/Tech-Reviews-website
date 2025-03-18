@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .H
   {
     color: rgb(255, 255, 255);
@@ -13,6 +18,7 @@
 .hero-content {
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 6vh;
 }
 
 .hero h2 {
@@ -84,11 +90,6 @@ article {
 }
 /* Responsiveness */
 /* General Reset */
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Media Queries for Responsiveness */
 
@@ -96,21 +97,22 @@ body {
 @media (max-width: 768px) {
   .hero {
     padding: 3rem 1rem;
+    width: 100%;
   }
 
   .hero-content {
     max-width: 100%;
+    margin-top: 3vh;
   }
 
   .featured-reviews h2 {
     width: auto; /* Full-width headline for better fit */
   }
 
-  .review-cards {
-    flex-direction: column; /* Stack cards vertically */
+ .review-cards {
+    flex-direction: column; /*Stack cards vertically */
     align-items: center;
-  }
-
+  } 
   .card {
     width: 90%; /* Adjust card width */
   }

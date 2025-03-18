@@ -1,71 +1,76 @@
+#imgframe {
+  width: 57%;
+  margin: 0 auto; /* Centers the element horizontally */
+  border:solid rgb(87, 0, 99);
+  padding: 1% 1% 1% 1%;
+  text-align: center; 
+}
 
-/* mediaquery */
-@media screen and (max-width: 768px) {
-  nav ul {
-      display: none; /* Hide the full menu on smaller screens */
-      flex-direction: column;
-      position: absolute;
-      top: 60px; /* Adjust as needed */
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      text-align: center;
-  }
+#imgframe img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+#hedding{
+  margin-top: 10%;
+  margin-left: 21%;
+  width: 57%;
+}
+#contframe {
+  text-align: center;
+  width: 57%;
+  margin-left: 23%;
+}
+.Cmtcontainer{
+  width: 57%;
+  margin-left: 21%;
+}
+.Related_Cont
+{
+  width: 57%;
+  margin-left:30%;
+}
+.card {
+  width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+}
 
-  nav ul.active {
-      display: flex; /* Show the menu when active class is added */
-  }
-
-  nav ul li {
-      margin: 0;
-      padding: 15px 0;
-      width: 100%;
-  }
-
-  /* .hamburger {
-      display: flex; 
-      align-items: flex-start; 
-      width: 5%;
-  }
-  #brandLogo {
-    margin: 0;
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-} */
-header { /* Assuming you have a container for these elements */
+.card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+/* for sidebar */
+.sidebar {
+  height: 90vh;
+  width: 250px;
+  background-color: #f5fcff;
+  color: rgb(0, 0, 0);
   display: flex;
-  align-items: center; /*Vertically center items in the row*/
-  justify-content: space-between; /* Distribute space between items (optional) */
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  top: 4%;
+  position:fixed ;
+  overflow: auto;
 }
 
-.hamburger {
-  display: flex;
-  align-items: flex-start;
-  width: 5%;
-  margin-left: 10px;
+.sidebar a {
+  text-decoration: none;
+  color: rgb(24, 24, 24);
+  padding: 10px 15px;
+  display: block;
 }
 
-#brandLogo {
-  margin: 0;
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
+.sidebar a:hover {
+  background-color: #aadaf1e1;
 }
-#LogSignBtn{
-  display: flex;
-  align-items: center; /*Vertically center items in the row*/
-  justify-content: space-between;
+.sidebar p{
+  background-color: #003e8e;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
-#btn {
-  position: fixed;
-  display: flex;
-  align-items: flex-start;
-  width: 5%;
-  margin-left: 10px;
-  }
-
-  #btn2{
-    margin: 0;
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-  } 
-}
+/* sidebar ended */

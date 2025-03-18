@@ -56,6 +56,18 @@ nav ul li a:hover {
   cursor: pointer;
   display: block; 
 } 
+#Usericon2
+{
+  margin-left: auto; /* Push the element to the right */
+  margin-right:2vw;
+  margin-top: 0; /* Align to the top */
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+}
  #btn {
   position: fixed;
   right:3%;
@@ -103,6 +115,12 @@ nav ul li a:hover {
   margin: 3px 0;
   transition: 0.4s;
 }
+footer {
+  background-color:rgb(4, 149, 222);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  }
 /* Responsive Design */
 /* mediaquery */
 @media screen and (max-width: 768px) {
@@ -144,148 +162,9 @@ header { /* Assuming you have a container for these elements */
   margin: 0;
   font-size: 1.5rem;
   margin-top: 0.5rem;
+ }
 }
-}
-    /* Footer styles */
     
-    footer {
-      background-color:rgb(4, 149, 222);
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    }
-    
-    /*---css for login and signup------*/
-    #close
-    {
-    margin-left: 100%;
-    background-color: #dfdfdf;
-    cursor: pointer;
-    }
-    .SignUpContainer
-    {
-    transform: translate(40%,-50%) scale(0.1);
-    visibility: hidden;
-    background-color: rgba(57, 57, 57, 0.13);
-    width: 100%;
-    height: 110%;
-    /* position: absolute;  */
-    position: fixed;
-    top:0;
-    transition: transform 0.3s,top 0.3s;
-    }
-    .SignUp
-    {
-    width: 32%;
-    height: 97%;
-    margin-left: 64%;
-    margin-top: 0%;
-    background: #ffffff;
-    border-radius: 6px;
-    top: 9%;
-    position: absolute;
-    padding: 0 30px 30px;
-    box-shadow: 2px 3px 10px rgb(62, 61, 61);
-    }
-    .openSignUpContainer
-    {
-    transform: translate(0%,-50%) scale(1);
-    visibility: visible;
-    top: 48.5%;
-    z-index: 100;
-    }
-    .SignUp>form>input
-    {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    }
-    .SignUp>form>img
-    {
-    margin: 5px;
-    cursor: pointer;
-    }
-    .SignUp>form>img:hover
-    {
-    background-color: rgba(11, 11, 11, 0.112);
-    }
-    .SignUp>form>#butn
-    {
-    cursor: pointer;
-    background-color:rgb(4, 160, 4);
-    width: 60%;color:white;
-    border-radius:3%;
-    margin-left:20%;
-    }
-    .SignUp>form>#butn:hover
-    {
-    background-color:rgb(4, 185, 4);
-    }
-    /* {% comment %} ---css for login ------ {% endcomment %} */
-    .loginContainer
-    {
-    transform: translate(40%,-50%) scale(0.1);
-    visibility: hidden;
-    background-color: rgba(57, 57, 57, 0.13);
-    width: 100%;
-    height: 110%;
-    /* {% comment %} position: absolute; {% endcomment %} */
-    position: fixed;
-    top:0;
-    transition: transform 0.3s,top 0.3s;
-    }
-    .login
-    {
-    width: 32%;
-    height: 97%;
-    margin-left: 64%;
-    margin-top: 0%;
-    background: #ffffff;
-    border-radius: 6px;
-    top: 9%;
-    position: absolute;
-    padding: 0 30px 30px;
-    box-shadow: 2px 3px 10px rgb(62, 61, 61);
-    }
-    .openloginContainer
-    {
-    transform: translate(0%,-50%) scale(1);
-    visibility: visible;
-    top: 48.5%;
-    z-index: 100;
-    }
-    .login>form>input
-    {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    
-    }
-    .login>form>img
-    {
-    margin: 5px;
-    cursor: pointer;
-    }
-    .login>form>img:hover
-    {
-    background-color: rgba(11, 11, 11, 0.112);
-    }
-    .login>form>#butn
-    {
-    cursor: pointer;
-    background-color:rgb(4, 160, 4);
-    width: 60%;color:white;
-    border-radius:3%;
-    margin-left:20%;
-    }
-    .login>form>#butn:hover
-    {
-    background-color:rgb(4, 185, 4);
-    }
      /* css for drop down  */
     .DropContainer
     {

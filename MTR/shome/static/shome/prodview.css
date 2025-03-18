@@ -1,77 +1,133 @@
 #imgframe {
-        /* width: 300px; */
-        width: 57%;
-        margin: 0 auto; /* Centers the element horizontally */
-        border:solid rgb(87, 0, 99);
-        padding: 1% 1% 1% 1%;
-        text-align: center; 
+    width: 57%;
+    margin: 0 auto;
+    border: solid rgb(87, 0, 99);
+    padding: 1%;
+    text-align: center;
+}
+
+#imgframe img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+#hedding {
+    margin-top: 20vh;
+    margin-left: 21%;
+    width: 57%;
+}
+
+#contframe {
+    text-align: center;
+    width: 57%;
+    margin-left: 23%;
+}
+
+.Cmtcontainer {
+    width: 57%;
+    margin-left: 21%;
+}
+
+.Related_Cont {
+    width: 57%;
+    margin-left: 30%;
+}
+
+.card {
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Limit maximum width */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    margin: 1rem auto; /* Center cards */
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 90vh;
+    width: 250px;
+    background-color: #f5fcff;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    top: 4%;
+    position: fixed;
+    overflow: auto;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: rgb(24, 24, 24);
+    padding: 10px 15px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #aadaf1e1;
+}
+
+.sidebar p {
+    background-color: #003e8e;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 1256px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .sidebar {
+        display: none;
+    }
+    #hedding,
+    #contframe,
+    .Cmtcontainer,
+    .Related_Cont,
+    #imgframe {
+        width: 90%; /* Adjust width for smaller screens */
+        margin-left: 5%; /* Center by adjusting margin */
     }
 
-    #imgframe img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 1rem;
+    .Related_Cont {
+        margin-left: 5%;
     }
-    #hedding{
-        margin-top: 10%;
-        margin-left: 21%;
-        width: 57%;
+
+    .card {
+        width: 90%; /* Make cards full width on smaller screens */
+        margin: 1rem auto;
     }
-    #contframe {
-        text-align: center;
-        width: 57%;
-        margin-left: 23%;
+}
+
+@media (max-width: 768px) {
+    #hedding {
+        margin-top: 11vh; /* Reduce top margin on very small screens */
     }
-    .Cmtcontainer{
-        width: 57%;
-        margin-left: 21%;
+}
+
+@media (max-width: 480px) {
+    #hedding,
+    #contframe,
+    .Cmtcontainer,
+    .Related_Cont,
+    #imgframe {
+        width: 95%; /* Even wider on very small screens */
+        margin-left: 2.5%;
     }
-    .Related_Cont
-    {
-        width: 57%;
-        margin-left:30%;
+
+    .card {
+        padding: 0.5rem; /* Less padding on very small screens */
     }
-      .card {
-        width: 600px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 1rem;
-        text-align: center;
-      }
-      
-      .card img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 1rem;
-      }
-    /* for sidebar */
-    .sidebar {
-        height: 90vh;
-        width: 250px;
-        background-color: #f5fcff;
-        color: rgb(0, 0, 0);
-        display: flex;
-        flex-direction: column;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        top: 4%;
-        position:fixed ;
-        overflow: auto;
-    }
-    
-    .sidebar a {
-        text-decoration: none;
-        color: rgb(24, 24, 24);
-        padding: 10px 15px;
-        display: block;
-    }
-    
-    .sidebar a:hover {
-        background-color: #aadaf1e1;
-    }
-    .sidebar p{
-        background-color: #003e8e;
-        color: rgb(255, 255, 255);
-        font-weight: bold;
-    }
-    /* sidebar ended */
+}

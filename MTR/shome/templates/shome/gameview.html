@@ -21,13 +21,13 @@
     {% endfor %}
 </div>
 {% comment %} sidebar ended {% endcomment %}
-<h2 id="hedding">{{Gaming.game_header}}</h2>
+<h2 id="hedding">{{Gaming.game_header}}</h2><br>
 <div id="imgframe">
     <img src="/media/{{Gaming.image}}" alt="">
-</div>
+</div><br>
 <div id="contframe">
     <p>{{Gaming.desc|safe}}</p>
-</div>
+</div><br><br>
 <hr>
 <div class="Cmtcontainer">
     <h2>Comments......</h2><br>
@@ -40,7 +40,7 @@
             <div class="card"> 
                 <img src="/media/{{i.image}}" alt="Smartphone">
                 <h3>{{i.game_header |slice:"0:93"}}...</h3>
-                <a href="/products/{{i.id}}">Read Review</a>
+                <a href="/games/{{i.id}}">Read Review</a>
             </div>
             <br><br>
     {% endfor %}

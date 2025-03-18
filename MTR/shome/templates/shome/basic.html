@@ -9,26 +9,6 @@
     {% block head_extra %}{% endblock %}
 </head>
 <body>
-   <!--- <header>
-        <p id="brandLogo"><i>Tech Reviews India</i></p>
-        <nav>
-            <ul>
-                <li><a href="/"class="H">Home</a></li>
-                <li><a href="/gadgets"class="G">Gadgets</a></li>
-                <li><a href="/software"class="S">Software</a></li>
-                <li><a href="/gaming"class="g">Gaming</a></li>
-                <li><a href="/about"class="A">About</a></li>
-                <li><a href="/contact"class="C">Contact</a></li>
-                {% if user.is_authenticated %}
-                 {% comment %} <button id="btn"onclick="opendrop()">Hello {{request.user}}<img src="static/shome/user.png" alt=""></button> {% endcomment %}
-                 <img src="{% static 'shome/user.png' %}" alt="" id="Usericon"onclick="opendrop()" height="39px" width="39px">
-                {% else %}
-                 <button id="btn"onclick="openLogin()">Login</button>
-                 <button id="btn2"onclick="opensignUp()">SignUP</button>
-                {% endif %}
-            </ul>
-        </nav>
-    </header>-->
     <header>
       <div class="hamburger" onclick="toggleMenu()">
         <div class="bar"></div>
@@ -53,51 +33,6 @@
       </nav>
   </header>
 
-    {% comment %}--------------- popup--------------- {% endcomment %}
-    <div class="SignUpContainer"id="SignUpContainer">
-      <div class="SignUp"id="SignUp">
-          <form action="/signup"method="post"id="form">
-            <img src="close.png" height="15px"width="15px"id="close"onclick="closesignUp()">
-            <br>
-            <h2><i>Sign Up</i></h2>
-            <i><p style="color:green;">Sign Up with :</p></i><br>
-            <img src="facebook.png" height="30px"width="30px"  alt="">
-            <img src="apple.png" height="30px"width="30px" alt="">
-            <img src="github.png"height="30px"width="30px" alt="">
-            <img src="search.png" height="30px"width="30px"alt="">
-            <i><h3 style="margin-left: 40%;color: rgb(113, 113, 113);">OR</h3></i>
-            <br>
-            <input type="text"placeholder="Username"id="username"name="username"><br>
-            <input type="text"placeholder="First name"id="Fname"name="Fname"><br>
-            <input type="text"placeholder="Last name"id="Lname"name="Lname"><br>
-            <input type="email"placeholder="Email"required id="Email"name="Email"><br>
-            <input type="password"placeholder="Password"required id="Password"name="Password"><br><br>
-            <input id="butn" type="submit"value="SignUp"name="SignUp">
-            {% csrf_token %}
-          </form>
-      </div>
-    </div>
-    {% comment %} ----------------------*loginPopup*--------------------------- {% endcomment %}
-    <div class="loginContainer"id="loginContainer">
-      <div class="login"id="login">
-          <form id="form"action="/login"method="post">
-            {% csrf_token %}
-            <img src="close.png" height="15px"width="15px"id="close"onclick="closeLogin()">
-            <br>
-            <h2><i>Login :</i></h2>
-            <i><p style="color:green;">Continue with :</p></i><br>
-            <img src="facebook.png" height="30px"width="30px"  alt="">
-            <img src="apple.png" height="30px"width="30px" alt="">
-            <img src="github.png"height="30px"width="30px" alt="">
-            <img src="search.png" height="30px"width="30px"alt=""><br><br>
-            <i><h3 style="margin-left: 40%;color: rgb(113, 113, 113);">OR</h3></i>
-            <br><input type="text"placeholder="Username"id="Loginusername"name="Loginusername"><br>
-            <input type="password"placeholder="Password"required id="LoginPass"name="LoginPass"><br>
-            <br><br>
-            <input id="butn" type="submit"value="Login">
-          </form>
-      </div>
-    </div>
     {% comment %} ------------dropdowndiv------------------- {% endcomment %}
     <div class="DropContainer"id="DropContainer">
       <div class="Drop"id="Drop">
@@ -132,13 +67,6 @@ function toggleMenu() {
 }
 
 // Example functions for buttons (replace with your actual logic)
-function openLogin() {
-  alert('Login clicked');
-}
-
-function opensignUp() {
-  alert('Sign Up clicked');
-}
 
 function opendrop() {
   alert('User icon clicked');
