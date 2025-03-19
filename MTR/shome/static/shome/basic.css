@@ -56,18 +56,7 @@ nav ul li a:hover {
   cursor: pointer;
   display: block; 
 } 
-#Usericon2
-{
-  margin-left: auto; /* Push the element to the right */
-  margin-right:2vw;
-  margin-top: 0; /* Align to the top */
-  border: 2px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  display: block;
-}
+
  #btn {
   position: fixed;
   right:3%;
@@ -128,7 +117,7 @@ footer {
       display: none; /* Hide the full menu on smaller screens */
       flex-direction: column;
       position: absolute;
-      top: 43px; /* Adjust as needed */
+      top: 4.5vh; /*Adjust as needed*/
       left: 0;
       width: 100%;
       background-color: #00243e;
